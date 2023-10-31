@@ -20,6 +20,11 @@ dependencies {
     implementation("org.apache.commons:commons-configuration2:2.9.0")
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 tasks.test {
     useJUnitPlatform()
 }
