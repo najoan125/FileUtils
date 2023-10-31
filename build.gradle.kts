@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    `maven-publish`
+    id("maven-publish")
 }
 
 group = "com.hyfata.file.utils"
@@ -23,6 +23,14 @@ dependencies {
 java {
     withSourcesJar()
     withJavadocJar()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
 }
 
 tasks.test {
