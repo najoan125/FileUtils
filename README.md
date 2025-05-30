@@ -18,6 +18,9 @@ dependencies {
 }
 ```
 
+## Use FileDownload instance
+You can see a demo source [here](https://github.com/najoan125/FileUtils/blob/master/src/test/java/FileDownloadTest.java)
+
 ## Editing
 This source is licensed under the **MIT license**. Modify or distribute as you like, **but be sure to cite the source!**
 
