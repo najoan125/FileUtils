@@ -3,12 +3,12 @@ package com.hyfata.file.utils.downloader.progress;
 @FunctionalInterface
 public interface DownloadProgressListener {
     /**
-     * 다운로드 진행률이 업데이트될 때 호출됩니다.
+     * Called when the download progress is updated.
      *
-     * @param totalBytesDownloaded 현재까지 다운로드된 바이트 수
-     * @param totalSize            전체 파일 크기 (알 수 없는 경우 -1)
-     * @param progressPercent      현재 진행률 (0.0 ~ 100.0), totalSize가 -1이면 이 값도 의미 없음
-     * @param bytesPerSecond       현재 초당 다운로드 속도 (bytes/sec)
+     * @param totalBytesDownloaded The total number of bytes downloaded so far
+     * @param totalSize            The total file size (or -1 if unknown)
+     * @param progressPercent      The current progress percentage (0.0 to 100.0) meaningless if the totalSize is -1
+     * @param bytesPerSecond       The current download speed in bytes per second (bytes/sec)
      */
     void onProgressUpdate(long totalBytesDownloaded, long totalSize, double progressPercent, double bytesPerSecond);
 }
