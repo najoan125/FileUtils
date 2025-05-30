@@ -1,11 +1,11 @@
 package com.hyfata.json;
 
+import com.hyfata.file.utils.FileUtil;
 import com.hyfata.json.exceptions.JsonEmptyException;
 import org.json.JSONObject;
 
 import java.io.*;
 import java.net.URLConnection;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class JsonReader {
@@ -42,20 +42,7 @@ public class JsonReader {
     }
 
     public static JSONObject readFromInputStream(InputStream inputStream, int fromLine) throws IOException, JsonEmptyException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-
-        for (int i = 0; i < fromLine - 1; i++) {
-            reader.readLine();
-        }
-
-        StringBuilder stringBuilder = new StringBuilder();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            stringBuilder.append(line);
-        }
-        reader.close();
-
-        String json = stringBuilder.toString();
+        String json = FileUtil.readFromInputStream(inputStream, fromLine);
         if (json.isEmpty()) {
             throw new JsonEmptyException("Json URL is empty or it damaged!");
         }

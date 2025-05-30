@@ -1,5 +1,7 @@
 package com.hyfata.file.utils;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -47,5 +49,11 @@ public class FileUtil {
         reader.close();
 
         return stringBuilder.toString();
+    }
+
+    public static String getSha256Hex(String filePath) throws IOException {
+        try (InputStream fis = Files.newInputStream(Paths.get(filePath))) {
+            return DigestUtils.sha256Hex(fis);
+        }
     }
 }
