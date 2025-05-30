@@ -20,3 +20,9 @@ dependencies {
 
 ## Editing
 This source is licensed under the **MIT license**. Modify or distribute as you like, **but be sure to cite the source!**
+
+## Dependencies
+- [Apache HttpClient](https://hc.apache.org/httpcomponents-client-4.5.x/index.html)
+- [Apache Commons Configuration](https://commons.apache.org/proper/commons-configuration/)
+- [Apache Commons Codec](https://commons.apache.org/proper/commons-codec/)
+- [JSON In Java](https://github.com/stleary/JSON-java)
